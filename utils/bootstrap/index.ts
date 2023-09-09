@@ -10,5 +10,5 @@ export {
   CardHeader,
   CardFooter,
   CardImgOverlay,
-} from "./Card";
+} from './Card';
 export * from 'react-bootstrap'

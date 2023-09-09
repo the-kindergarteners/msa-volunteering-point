@@ -8,7 +8,7 @@ import logo from '@/public/logo.png'
 import { usePathname } from 'next/navigation'
 import styles from './sidebar.module.css'
 
-export default function Sidebar(): React.ReactElement {
+export default function Sidebar (): React.ReactElement {
   const pathname = usePathname()
   const profile = null
   return (
@@ -20,7 +20,7 @@ export default function Sidebar(): React.ReactElement {
       </Row>
       <Row className='flex-fill'>
         <Col>
-          <Nav variant="pills" className='flex-column' defaultActiveKey={pathname}>
+          <Nav variant='pills' className='flex-column' defaultActiveKey={pathname}>
             <NavItem>
               <NavLink as={Link} href='/opportunities' className={styles['sidebar-item']}>Opportunities</NavLink>
             </NavItem>
@@ -38,13 +38,19 @@ export default function Sidebar(): React.ReactElement {
       </Row>
       <Row>
         <Col>
-          {profile == null ? (
-            <Button as={Link} href='/login'><i className="bi-box-arrow-in-right" /> Log in</Button>
-          ) : (
-            <>
-              <i className='bi-person-circle' style={{ fontSize: '32px' }} />
-            </>
-          )}
+          {profile == null
+            ? (
+              <Link href='/login'>
+                <Button>
+                  <i className='bi-box-arrow-in-right' /> Log in
+                </Button>
+              </Link>
+              )
+            : (
+              <>
+                <i className='bi-person-circle' style={{ fontSize: '32px' }} />
+              </>
+              )}
         </Col>
       </Row>
     </Container>

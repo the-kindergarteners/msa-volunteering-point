@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import Card from "react-bootstrap/Card";
+import Card from 'react-bootstrap/Card'
 
 export const {
   Img: CardImg,
@@ -11,7 +11,7 @@ export const {
   Text: CardText,
   Header: CardHeader,
   Footer: CardFooter,
-  ImgOverlay: CardImgOverlay,
-} = Card;
+  ImgOverlay: CardImgOverlay
+} = Card
 
-export default Card;
+export default Card

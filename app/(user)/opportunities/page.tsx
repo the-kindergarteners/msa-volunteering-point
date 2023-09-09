@@ -2,7 +2,7 @@ import { Button, Card, CardBody, CardImg, CardLink, CardSubtitle, CardTitle, Col
 import Link from 'next/link'
 import getEvents from '@/utils/get-events'
 
-export default async function OpportunitiesPage(): Promise<React.ReactElement> {
+export default async function OpportunitiesPage (): Promise<React.ReactElement> {
   const events = await getEvents()
   return (
     <Container as='main'>
@@ -18,10 +18,10 @@ export default async function OpportunitiesPage(): Promise<React.ReactElement> {
                 {event.recruiting
                   ? (
                     <Button>Claim</Button>
-                  )
+                    )
                   : (
                     <Button disabled>Full</Button>
-                  )}
+                    )}
               </CardBody>
             </Card>
           </Col>

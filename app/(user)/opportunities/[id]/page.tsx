@@ -1,7 +1,7 @@
-import { Container, Spinner } from '@/utils/bootstrap'
+import { Container } from '@/utils/bootstrap'
 import getEvent from '@/utils/get-event'
 
-export default async function EventPage({ params }: { params: { id: string } }): Promise<React.ReactElement> {
+export default async function EventPage ({ params }: { params: { id: string } }): Promise<React.ReactElement> {
   const event = await getEvent(params.id)
   return (
     <Container as='main'>
@@ -10,10 +10,10 @@ export default async function EventPage({ params }: { params: { id: string } }):
       {event.recruiting
         ? (
           <p>Looking for {event.jobsLeft} more participants.</p>
-        )
+          )
         : (
           <p>{event.awaiting} candidates are awaiting.</p>
-        )}
+          )}
     </Container>
   )
 }
