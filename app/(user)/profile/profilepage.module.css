@@ -1,0 +1,40 @@
+.container-size {
+    margin: 30px 30px 40px 40px;
+    width: 60%
+}
+
+.profile-main-text {
+    padding: 40px;
+}
+
+.text {
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.orange-text {
+    color: var(--bs-primary);
+    font-weight: bold;
+}
+
+.progressbar {
+    width: 355px;
+    height: 2rem;
+    border-radius: 40px;
+    background-color: rgba(150, 150, 150, 0.40);
+}
+
+.progressbar-label {
+    text-align: right;
+    padding: 0.5rem;
+}
+
+.progressbar-subtitle {
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+.table-right-align {
+    text-align: right;
+}

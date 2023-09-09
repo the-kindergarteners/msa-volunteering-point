@@ -1,0 +1,16 @@
+.sidebar-item {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 35px;
+  color: var(--bs-white)
+}
+
+.selected-item {
+  color: var(--bs-primary)
+}
+
+.msa-logo {
+  padding: 20px;
+  width: 204px;
+  height: auto;
+}
