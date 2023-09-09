@@ -1,5 +1,14 @@
 import { Container } from '@/utils/bootstrap'
+import getEvents from '@/utils/get-events'
 import getEvent from '@/utils/get-event'
+
+export async function generateStaticParams() {
+  const events = await getEvents()
+ 
+  return events.map(event => ({
+    id: event.id,
+  }))
+}
 
 export default async function EventPage ({ params }: { params: { id: string } }): Promise<React.ReactElement> {
   const event = await getEvent(params.id)
