@@ -1,5 +1,5 @@
 import { Account, NewAccount, auth, firestore } from "@/utils/firebase";
-import { Profile } from "@/utils/get-profile";
+import { Profile } from "@/utils/use-profile";
 import { setProperty } from "dot-prop";
 import { FirebaseError } from "firebase/app";
 import {

@@ -1,22 +1,6 @@
 import { collection } from "firebase/firestore";
-import { ObservableStatus, useFirestore, useFirestoreCollectionData } from "reactfire";
-
-export interface Event {
-  id: string
-  name: string
-  date: Date
-  recruiting: boolean
-}
-
-export interface AvailableEvent extends Event {
-  recruiting: true
-  jobsLeft: number
-}
-
-export interface UnavailableEvent extends Event {
-  recruiting: false
-  awaiting: number
-}
+import { ObservableStatus, useFirestore, useFirestoreCollectionData } from "./reactfire";
+import { AvailableEvent, UnavailableEvent } from "./use-event";
 
 export default function useEvents(): ObservableStatus<Array<AvailableEvent | UnavailableEvent>> {
     const firestore = useFirestore()
