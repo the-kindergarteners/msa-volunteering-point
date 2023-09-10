@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "npm",
+            "name": "npm script: dev",
+            "command": "run",
+            "scripts": "dev",
+        },
+        {
+            "type": "npm",
+            "name": "npm script: lint",
+            "command": "run",
+            "scripts": "lint",
+        }
+    ]
+}

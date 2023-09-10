@@ -5,10 +5,10 @@ import { Alert, Card, CardImg, Col, Container, ProgressBar, Row, Spinner, Table 
 import styles from './profilepage.module.css'
 import classNames from 'classnames'
 import useProfile from '@/utils/use-profile'
-import { User } from 'firebase/auth'
+import { type User } from 'firebase/auth'
 import { useUser } from 'reactfire'
 
-function ProfileContent({ user }: { user: User }): React.ReactElement {
+function ProfileContent ({ user }: { user: User }): React.ReactElement {
   const { status, data: profile } = useProfile(user)
   if (status === 'loading') return <Spinner />
   else if (status === 'success') {
@@ -90,19 +90,17 @@ function ProfileContent({ user }: { user: User }): React.ReactElement {
         </Row>
       </>
     )
-  } 
-  else return <Alert variant='danger'>Cannot fetch profile.</Alert>
+  } else return <Alert variant='danger'>Cannot fetch profile.</Alert>
 }
 
-export default function ProfilePage(): React.ReactElement {
+export default function ProfilePage (): React.ReactElement {
   const { status, data: user } = useUser()
   let content: React.ReactElement
   if (status === 'loading') content = <Spinner />
   else if (status === 'success') {
     if (user == null) redirect('/login')
     content = <ProfileContent user={user} />
-  }
-  else content = <Alert variant='danger'>Unknown error</Alert>
+  } else content = <Alert variant='danger'>Unknown error</Alert>
   return (
     <Container as='main' className={styles['container-size']}>
       {content}

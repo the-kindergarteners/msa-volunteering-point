@@ -4,11 +4,11 @@ import { useState } from 'react'
 import { Alert, Button, Col, Container, Form, Row, Spinner } from '@/utils/bootstrap'
 import { register } from '../actions'
 
-export default function RegisterPage(): React.ReactElement {
+export default function RegisterPage (): React.ReactElement {
   const [pending, setPending] = useState<boolean>(false)
   const [message, setMessage] = useState<string | null>(null)
 
-  async function onRegister(formData: FormData): Promise<void> {
+  async function onRegister (formData: FormData): Promise<void> {
     setMessage(null)
     setPending(true)
     const res = await register(formData)
@@ -19,8 +19,8 @@ export default function RegisterPage(): React.ReactElement {
   return (
     <Container>
       <h1>Register</h1>
-      {message ? <Alert variant='danger'>{message}</Alert> : null}
-      <Form action={onRegister}>
+      {message == null ? null : <Alert variant='danger'>{message}</Alert>}
+      <Form action={formData => { void onRegister(formData) }}>
         <fieldset disabled={pending}>
           <Row className='mb-3'>
             <Form.Group as={Col} controlId='first-name'>
@@ -92,7 +92,7 @@ export default function RegisterPage(): React.ReactElement {
               </Form.Group>
               <Form.Group as={Col} controlId='home-postcode'>
                 <Form.Label>Postcode</Form.Label>
-                <Form.Control pattern="\d{4}" required name='home.postcode' />
+                <Form.Control pattern='\d{4}' required name='home.postcode' />
               </Form.Group>
             </Row>
           </fieldset>

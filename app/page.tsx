@@ -1,9 +1,9 @@
 'use client'
 
-import Link from "next/link"
-import { Nav, NavItem, NavLink } from "@/utils/bootstrap"
+import Link from 'next/link'
+import { Nav, NavItem, NavLink } from '@/utils/bootstrap'
 
-export default function Home(): React.ReactElement {
+export default function Home (): React.ReactElement {
   return (
     <main className='px-4 py-3'>
       Welcome

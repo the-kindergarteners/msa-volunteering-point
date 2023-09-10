@@ -1,7 +1,7 @@
 import { Col, Row } from '@/utils/bootstrap'
 import Sidebar from './Sidebar'
 
-export default function UserLayout({
+export default function UserLayout ({
   children
 }: {
   children: React.ReactNode

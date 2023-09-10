@@ -4,7 +4,6 @@ import './global.scss'
 import { AuthProvider, FirebaseAppProvider, FirestoreProvider } from '@/utils/reactfire'
 import { auth, firebaseConfig, firestore } from '@/utils/firebase'
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Get volunteering and earn points.'
 }
 
-export default function RootLayout({
+export default function RootLayout ({
   children
 }: {
   children: React.ReactNode
