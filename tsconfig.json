@@ -4,7 +4,6 @@
     "@tsconfig/next/tsconfig.json"
   ],
   "compilerOptions": {
-    "target": "es5",
     "paths": {
       "@/*": [
         "./*"

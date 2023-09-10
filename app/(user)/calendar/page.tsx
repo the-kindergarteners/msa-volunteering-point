@@ -1,5 +1,8 @@
 import { Container } from '@/utils/bootstrap'
 
-export default function CalendarPage (): React.ReactElement {
-  return (<Container as='main' />)
+export default async function CalendarPage(): Promise<React.ReactElement> {
+  return (
+    <Container as='main'>
+    </Container>
+  )
 }

@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { Button, Col, Container, Nav, NavItem, NavLink, Row } from '@/utils/bootstrap'
 import Image from 'next/image'
 import Link from 'next/link'

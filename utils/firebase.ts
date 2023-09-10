@@ -1,8 +1,11 @@
-import { initializeApp } from 'firebase/app'
+'use client'
+
+import { FirebaseOptions, initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
+import { z } from 'zod'
 
-const firebaseConfig = {
+export const firebaseConfig: FirebaseOptions = {
   apiKey: 'AIzaSyBbcT3osQ_y1YtCtCXdSsS7jeowF5pGx_g',
   authDomain: 'msa-easyvolunteer.firebaseapp.com',
   projectId: 'msa-easyvolunteer',
@@ -15,26 +18,13 @@ const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 export const firestore = getFirestore(app)
 
-export interface Account {
-  email: string
-  password: string
-}
+export const Account = z.object({
+  email: z.string(),
+  password: z.string()
+})
+type Account = z.infer<typeof Account>
 
-export enum Gender {
-  MALE = 'male',
-  FEMALE = 'FEMALE',
-  NULL = 'null',
-}
-
-export interface Profile {
-  firstName: string
-  lastName: string
-  birthdate: Date
-  gender: Gender
-  home: {
-    street: string
-    suburb: string
-    state: string
-    postcode: number
-  }
-}
+export const NewAccount = Account.extend({
+  passwordConfirm: z.string(),
+});
+type NewAccount = z.infer<typeof Account>;
