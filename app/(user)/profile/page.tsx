@@ -1,12 +1,13 @@
 'use client'
 
 import { redirect } from 'next/navigation'
-import { Alert, Card, CardImg, Col, Container, ProgressBar, Row, Spinner, Table } from '@/utils/bootstrap'
+import { Alert, Button, Card, CardImg, Col, Container, ProgressBar, Row, Spinner, Table } from '@/utils/bootstrap'
 import styles from './profilepage.module.css'
 import classNames from 'classnames'
 import useProfile from '@/utils/use-profile'
 import { type User } from 'firebase/auth'
 import { useUser } from 'reactfire'
+import Link from 'next/link'
 
 function ProfileContent ({ user }: { user: User }): React.ReactElement {
   const { status, data: profile } = useProfile(user)
@@ -86,6 +87,15 @@ function ProfileContent ({ user }: { user: User }): React.ReactElement {
                 ))}
               </tbody>
             </Table>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Link href='/logout'>
+              <Button>
+                <i className='bi-box-arrow-out-right' /> Log out
+              </Button>
+            </Link>
           </Col>
         </Row>
       </>

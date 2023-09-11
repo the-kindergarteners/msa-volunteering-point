@@ -1,6 +1,6 @@
 'use client'
 
-import { FirebaseOptions, initializeApp } from 'firebase/app'
+import { type FirebaseOptions, initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { z } from 'zod'
@@ -25,6 +25,6 @@ export const Account = z.object({
 type Account = z.infer<typeof Account>
 
 export const NewAccount = Account.extend({
-  passwordConfirm: z.string(),
-});
-type NewAccount = z.infer<typeof Account>;
+  passwordConfirm: z.string()
+})
+type NewAccount = z.infer<typeof Account>

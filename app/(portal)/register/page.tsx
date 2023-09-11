@@ -20,7 +20,8 @@ export default function RegisterPage (): React.ReactElement {
     <Container>
       <h1>Register</h1>
       {message == null ? null : <Alert variant='danger'>{message}</Alert>}
-      <Form action={formData => { void onRegister(formData) }}>
+      {/* eslint-disable-next-line */}
+      <Form action={onRegister}>
         <fieldset disabled={pending}>
           <Row className='mb-3'>
             <Form.Group as={Col} controlId='first-name'>

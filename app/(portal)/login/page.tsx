@@ -20,7 +20,8 @@ export default function LoginPage (): React.ReactElement {
     <Container>
       <h1>Login</h1>
       {message == null ? null : <Alert variant='danger'>{message}</Alert>}
-      <Form action={formData => { void onLogin(formData) }}>
+      {/* eslint-disable-next-line */}
+      <Form action={onLogin}>
         <fieldset disabled={pending}>
           <FormGroup className='mb-3' controlId='email'>
             <FormLabel>Email address</FormLabel>

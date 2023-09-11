@@ -5,6 +5,7 @@ import { FirebaseError } from 'firebase/app'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile
 } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
@@ -38,6 +39,11 @@ export async function login (formData: FormData): Promise<ActionResponse> {
     return { status: 500, message: 'Unexpected error' }
   }
   redirect('/profile')
+}
+
+export async function logout (): Promise<ActionResponse> {
+  await signOut(auth)
+  redirect('/login')
 }
 
 export async function register (formData: FormData): Promise<ActionResponse> {
